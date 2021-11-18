@@ -1,6 +1,7 @@
 // imports
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
@@ -11,6 +12,7 @@ mongoose.connect('mongodb://localhost/libraryapp')
 
 // middlewares
 app.use(express.json());
+app.use(cors());
 
 // users,
 app.use("/api/users", require('./routes/user'));
